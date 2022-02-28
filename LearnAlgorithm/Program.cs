@@ -7,15 +7,14 @@ namespace LearnAlgorithm
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
-            //var example = new Array_01();
-            //Console.WriteLine(example.DichotomousMethod1(example.arrays, 4));
-            //var example = new Array_02();
-            //Console.WriteLine(example.RemoveElement(example.arrays, 2));
-            // var example = new Array_03();
-            // Console.WriteLine(example.SortedSquares(example.arrays));
-            
-            var example = new Array04();
-            Console.WriteLine(example.MinSubArrayLen(7,example.arrays));
+            // var example = new ArrayExample();
+
+            // var example = new Array01();
+            // var example = new Array02();
+            //  var example = new Array03();
+            //  var example = new Array04();
+            var example = new Array05();
+            example.Print();
         }
     }
 }

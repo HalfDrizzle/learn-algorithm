@@ -1,30 +1,38 @@
-﻿
-using System;
+﻿using System;
 
 namespace LearnAlgorithm
 {
-    public class ArrayExample
+    public abstract class ArrayExample
     {
-        public int[] arrays = new int[30];
+        public int[] arrays;
 
-        protected ArrayExample()
+        public virtual void InitData()
         {
-            int count = 0;
-            for (int i = 0; i < arrays.Length; i++)
-            {
-                count += 2;
-                arrays[i] = count;
-            }
-            //arrays = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
+            throw new NotImplementedException();
+        }
+        
+        public virtual void Print()
+        {
+            throw new NotImplementedException();
         }
     }
 
 
-    public class Array_01 : ArrayExample
+    public sealed class Array01 : ArrayExample
     {
-        public Array_01() : base()
+        public Array01(bool print = true)
+        {
+            InitData();
+            if (print)
+            {
+                Print();
+            }
+        }
+
+        public override void InitData()
         {
             int count = 0;
+            arrays = new int[30];
             for (int i = 0; i < arrays.Length; i++)
             {
                 count += 2;
@@ -57,11 +65,21 @@ namespace LearnAlgorithm
         }
     }
 
-    public class Array_02 : ArrayExample
+    public sealed class Array02 : ArrayExample
     {
-        public Array_02() : base()
+        public Array02(bool print = true)
+        {
+            InitData();
+            if (print)
+            {
+                Print();
+            }
+        }
+        
+        public override void InitData()
         {
             int count = 0;
+            arrays = new int[30];
             for (int i = 0; i < arrays.Length; i++)
             {
                 count += 2;
@@ -79,13 +97,28 @@ namespace LearnAlgorithm
                     nums[end++] = nums[i];
                 }
             }
+
             return end;
+        }
+
+        public override void Print()
+        {
+            Console.WriteLine(RemoveElement(arrays, 2));
         }
     }
 
-    public class Array_03 : ArrayExample
+    public sealed class Array03 : ArrayExample
     {
-        public Array_03() : base()
+        public Array03(bool print = true)
+        {
+            InitData();
+            if (print)
+            {
+                Print();
+            }
+        }
+
+        public override void InitData()
         {
             arrays = new int[] { -4, -1, 0, 3, 10 };
         }
@@ -96,6 +129,7 @@ namespace LearnAlgorithm
             {
                 return nums;
             }
+
             var results = new int[nums.Length];
             int left = 0;
             int right = nums.Length - 1;
@@ -118,15 +152,29 @@ namespace LearnAlgorithm
 
             return results;
         }
+
+        public override void Print()
+        {
+            Console.WriteLine(SortedSquares(arrays));
+        }
     }
 
-    public class Array04 : ArrayExample
+    public sealed class Array04 : ArrayExample
     {
-        public Array04() 
+        public Array04(bool print = true)
         {
-            arrays = new int[] {2,3,1,2,4,3 };
+            InitData();
+            if (print)
+            {
+                Print();
+            }
         }
         
+        public override void InitData()
+        {
+            arrays = new int[] { 2, 3, 1, 2, 4, 3 };
+        }
+
         public int MinSubArrayLen(int target, int[] nums)
         {
             int result = Int32.MaxValue;
@@ -135,13 +183,13 @@ namespace LearnAlgorithm
             {
                 return 0;
             }
-            
+
             int start = 0;
             int sum = 0;
             for (int end = 0; end < nums.Length; end++)
             {
                 sum += nums[end];
-                while ( sum >= target )
+                while (sum >= target)
                 {
                     var length = end - start + 1;
                     result = length < result ? length : result;
@@ -153,7 +201,90 @@ namespace LearnAlgorithm
             {
                 return 0;
             }
+
             return result;
+        }
+
+        public override void Print()
+        {
+            Console.WriteLine(MinSubArrayLen(7, arrays));
+        }
+    }
+
+    public sealed class Array05 : ArrayExample
+    {
+        public Array05(bool print = true)
+        {
+            InitData();
+            if (print)
+            {
+                Print();
+            }
+        }
+        
+        public override void InitData()
+        {
+        }
+
+        public int[][] GenerateMatrix(int n)
+        {
+            var result = new int[n][];
+            for (int i = 0; i < n; i++)
+            {
+                result[i] = new int[n];
+            }
+
+            int count = 1;
+            int loop = 0;
+            int mid = n / 2;
+            int end;
+            while (loop <= mid)
+            {
+                end = n - 1 - loop;
+                for (int i = loop; i < end; i++)
+                {
+                    result[loop][i] = count++;
+                }
+
+                for (int i = loop; i < end; i++)
+                {
+                    result[i][end] = count++;
+                }
+
+                for (int i = end; i > loop; i--)
+                {
+                    result[end][i] = count++;
+                }
+
+                for (int i = end; i > loop; i--)
+                {
+                    result[i][loop] = count++;
+                }
+
+                loop++;
+            }
+
+            // 如果n为奇数的话，需要单独给矩阵最中间的位置赋值
+            if (n % 2 != 0)
+            {
+                result[mid][mid] = count;
+            }
+
+            return result;
+        }
+
+        public override void Print()
+        {
+            var matrix = GenerateMatrix(4);
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                for (int j = 0; j < matrix[i].Length; j++)
+                {
+                    Console.Write($"{matrix[i][j]} ");
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }
