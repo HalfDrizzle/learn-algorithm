@@ -19,7 +19,14 @@ namespace LearnAlgorithm
             // example.Print();
             
             // LearnAsync.PrintPageLength();
-            var linkedList = new LinkedList();
+            // var linkedList = new LinkedList();
+            // var a = new LeetCode202();
+            // Console.WriteLine(a.IsHappy(19));
+            
+            // var a = new LeetCode454();
+            // var a = new LeetCode383();
+            // a.InitData();
+            var z = new LeetCode15();
         }
     }
 }

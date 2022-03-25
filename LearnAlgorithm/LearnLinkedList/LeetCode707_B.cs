@@ -110,14 +110,14 @@ public class DoubleLinkedList
                 return;
             }
 
-            var checkNode = ;
-            for (int i = 0; i < index; i++)
-            {
-                checkNode = checkNode.next;
-            }
-
-            checkNode.next = checkNode.next.next;
-            _size--;
+            // var checkNode = ;
+            // for (int i = 0; i < index; i++)
+            // {
+            //     checkNode = checkNode.next;
+            // }
+            //
+            // checkNode.next = checkNode.next.next;
+            // _size--;
         }
     }
 
