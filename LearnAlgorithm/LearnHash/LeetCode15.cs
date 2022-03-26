@@ -9,7 +9,9 @@ public class LeetCode15
     private List<int> data;
     public LeetCode15()
     {
-        data = new List<int>(){-1,0,1,2,-1,-4};
+        //data = new List<int>(){-1,0,1,2,-1,-4};
+        data = new List<int>() { -4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0 };
+
         var resultData = ThreeSum(data.ToArray());
         Print(resultData);
     }
@@ -39,33 +41,51 @@ public class LeetCode15
     public IList<IList<int>> ThreeSum(int[] nums)
     {
         quickSort(nums);
-        int left = 0;
+        int middle = 0;
         int right = nums.Length - 1;
         var result = new List<List<int>>();
-        while (left + 1 < right)
+        for (int left = 0; left < right; left++)
         {
-            for (int i = left + 1; i < right; i++)
+            if(nums[middle] > 0)
             {
-                if (nums[i] == -(nums[left]+nums[right]))
+                return result.ToArray();
+            }
+            if( left > 0 && nums[left] == nums[left - 1])
+            {
+                continue;
+            }
+
+            middle = left + 1;
+            right = nums.Length - 1;
+            while (middle < right)
+            {
+                var sum = nums[left] + nums[middle] + +nums[right];
+                if (sum > 0)
                 {
-                    if (result.Contains(new List<int>(){nums[left], nums[i], nums[right]}))
+                    right--;
+                }
+                else if (sum < 0)
+                {
+                    middle++;
+                }
+                else
+                {
+                    result.Add(new List<int>() { nums[left], nums[middle], nums[right] });
+
+                    while (middle < right && nums[right - 1] == nums[right])
                     {
-                        result.Add(new List<int>(){nums[left], nums[i], nums[right]});
+                        right--;
                     }
+
+                    while (middle < right && nums[middle + 1] == nums[middle])
+                    {
+                        middle++;
+                    }
+
+                    right--;
+                    middle++;
                 }
             }
-
-            left++;
-            
-            for (int i = left + 1; i < right; i++)
-            {
-                if (nums[i] == -(nums[left]+nums[right]))
-                {
-                    result.Add(new List<int>(){nums[left], nums[i], nums[right]});
-                }
-            }
-
-            right--;
         }
 
         return result.ToArray();
