@@ -1,6 +1,7 @@
 ﻿using System;
 using LearnAlgorithm.LearnCSharp;
 using LearnAlgorithm.LearnLinkedList;
+using LearnAlgorithm.LearnString;
 
 namespace LearnAlgorithm
 {
@@ -17,14 +18,18 @@ namespace LearnAlgorithm
             //  var example = new Array04();
             // var example = new Array05();
             // example.Print();
-
+            
             // LearnAsync.PrintPageLength();
             // var linkedList = new LinkedList();
-
-            // var leetcode = new LeetCode24();
-
-            var leetcode = new LeetCode15();
-
+            // var a = new LeetCode202();
+            // Console.WriteLine(a.IsHappy(19));
+            
+            // var a = new LeetCode454();
+            // var a = new LeetCode383();
+            // a.InitData();
+            // var z = new LeetCode15();
+            // var z = new LeetCode344();
+            var z = new LeetCode151();
         }
     }
 }
