@@ -6,7 +6,7 @@ public class LeetCode151
 {
     public LeetCode151()
     {
-        var s = "  the sky is  blue   ";
+        var s = "  the sky is    blue      ";
         Console.WriteLine(ReverseWords(s));
     }
     
@@ -16,43 +16,36 @@ public class LeetCode151
         var chars = s.ToCharArray();
         int left = 0, right = 0;
 
-        int count = 0;
-        for (; right < chars.Length; right++)
+        while (chars[right] == ' ')
         {
-            if (chars[right] == ' ')
-            {
-                chars[left++] = chars[right++];
-                if (right == chars.Length - 1)
-                {
-                    chars[left] = chars[right];
-                    count++;
-                    break;
-                }
-                
-                while (right < chars.Length && chars[right] == ' ')
-                {
-                    right++;
-                    count++;
-                }
-                
-                if (right >= chars.Length - 1 )
-                {
-                    break;
-                }
-                
-                chars[left++] = chars[right];
-                continue;
-            }
-            chars[left] = chars[right];
-            left++;
+            right++;
         }
 
-        chars[^count] = '\0';
+        for (; right < chars.Length; right++)
+        {
+            if (right - 1 > 0 && chars[right - 1] == chars[right] && chars[right] == ' ') 
+            {
+                continue;
+            }
+            else
+            {
+                chars[left++] = chars[right];
+            }
+        }
 
-        ReverseStrIndex(chars,0, chars.Length - 1 - count);
-
-        var length = chars.Length - 1 - count;
-
+        if (left - 1 > 0 && chars[left - 1] == ' ')
+        {
+            Array.Resize(ref chars, left - 1);
+        }
+        else
+        {
+            Array.Resize(ref chars, left);
+        }
+        
+        ReverseStrIndex(chars,0, chars.Length - 1);
+        
+        var length = chars.Length - 1;
+        
         left = 0;
         for (right = 0; right <= length; right++)
         {
