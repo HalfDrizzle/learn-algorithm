@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using LearnAlgorithm.LearnCSharp;
 using LearnAlgorithm.LearnLinkedList;
+using LearnAlgorithm.LearnStack;
 using LearnAlgorithm.LearnString;
 
 namespace LearnAlgorithm
@@ -21,15 +23,21 @@ namespace LearnAlgorithm
             
             // LearnAsync.PrintPageLength();
             // var linkedList = new LinkedList();
-            // var a = new LeetCode202();
-            // Console.WriteLine(a.IsHappy(19));
+            // var example = new LeetCode202();
+            // Console.WriteLine(example.IsHappy(19));
             
-            // var a = new LeetCode454();
-            // var a = new LeetCode383();
-            // a.InitData();
-            // var z = new LeetCode15();
-            // var z = new LeetCode344();
-            var z = new LeetCode151();
+            // var example = new LeetCode454();
+            // var example = new LeetCode383();
+            // example.InitData();
+            // var example = new LeetCode15();
+            // var example = new LeetCode344();
+            // var example = new LeetCode151();
+            // var example = new LeetCode05();
+            // var example = new LeetCode28();
+            // var example = new LeetCode20();
+            // var example = new LeetCode1047();
+            // var example = new LeetCode239();
+            var example = new LeetCode239_B();
         }
     }
 }
