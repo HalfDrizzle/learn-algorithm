@@ -8,13 +8,13 @@ public class leetcode242
         int start = (int)'a';
         int[] tableA = new int[26];
         int[] tableB = new int[26];
-        
+
         foreach (var c in s)
         {
             var key = (int)c - start;
             tableA[key]++;
-        } 
-        
+        }
+
         foreach (var c in t)
         {
             var key = (int)c - start;

@@ -9,7 +9,7 @@ public class LeetCode151
         var s = "  the sky is    blue      ";
         Console.WriteLine(ReverseWords(s));
     }
-    
+
     public string ReverseWords(string s)
     {
         //remove space
@@ -23,7 +23,7 @@ public class LeetCode151
 
         for (; right < chars.Length; right++)
         {
-            if (right - 1 > 0 && chars[right - 1] == chars[right] && chars[right] == ' ') 
+            if (right - 1 > 0 && chars[right - 1] == chars[right] && chars[right] == ' ')
             {
                 continue;
             }
@@ -41,11 +41,11 @@ public class LeetCode151
         {
             Array.Resize(ref chars, left);
         }
-        
-        ReverseStrIndex(chars,0, chars.Length - 1);
-        
+
+        ReverseStrIndex(chars, 0, chars.Length - 1);
+
         var length = chars.Length - 1;
-        
+
         left = 0;
         for (right = 0; right <= length; right++)
         {
@@ -62,9 +62,11 @@ public class LeetCode151
 
         return new string(chars);
     }
-    
-    void ReverseStrIndex(char[] s, int start, int end){
-        for(int i = start, j = end; i < j; i++, j--){
+
+    void ReverseStrIndex(char[] s, int start, int end)
+    {
+        for (int i = start, j = end; i < j; i++, j--)
+        {
             (s[i], s[j]) = (s[j], s[i]);
         }
     }

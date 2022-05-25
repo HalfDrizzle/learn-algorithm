@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using LearnAlgorithm.LearnCSharp;
-using LearnAlgorithm.LearnLinkedList;
-using LearnAlgorithm.LearnStack;
-using LearnAlgorithm.LearnString;
+﻿using LearnAlgorithm.LearnStack;
 
 namespace LearnAlgorithm
 {
@@ -20,12 +15,12 @@ namespace LearnAlgorithm
             //  var example = new Array04();
             // var example = new Array05();
             // example.Print();
-            
+
             // LearnAsync.PrintPageLength();
             // var linkedList = new LinkedList();
             // var example = new LeetCode202();
             // Console.WriteLine(example.IsHappy(19));
-            
+
             // var example = new LeetCode454();
             // var example = new LeetCode383();
             // example.InitData();

@@ -9,7 +9,8 @@ public class LeetCode20
     {
         Solution s = new Solution();
     }
-    public class Solution {
+    public class Solution
+    {
 
         public Solution()
         {
@@ -25,7 +26,8 @@ public class LeetCode20
                 if (c is '(' or '{' or '[')
                 {
                     stack.Push(c);
-                }else if (c is ')' or '}' or ']')
+                }
+                else if (c is ')' or '}' or ']')
                 {
                     if (stack.Count == 0)
                     {

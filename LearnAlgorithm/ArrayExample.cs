@@ -10,7 +10,7 @@ namespace LearnAlgorithm
         {
             throw new NotImplementedException();
         }
-        
+
         public virtual void Print()
         {
             throw new NotImplementedException();
@@ -75,7 +75,7 @@ namespace LearnAlgorithm
                 Print();
             }
         }
-        
+
         public override void InitData()
         {
             int count = 0;
@@ -169,7 +169,7 @@ namespace LearnAlgorithm
                 Print();
             }
         }
-        
+
         public override void InitData()
         {
             arrays = new int[] { 2, 3, 1, 2, 4, 3 };
@@ -221,7 +221,7 @@ namespace LearnAlgorithm
                 Print();
             }
         }
-        
+
         public override void InitData()
         {
         }

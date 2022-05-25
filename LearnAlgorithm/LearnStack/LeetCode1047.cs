@@ -10,7 +10,7 @@ public class LeetCode1047
         var s = "abbaca";
         Console.WriteLine(RemoveDuplicates(s));
     }
-    
+
     public string RemoveDuplicates(string s)
     {
         var chars = s.ToCharArray();
@@ -34,6 +34,6 @@ public class LeetCode1047
             chars[i] = stack.Pop();
         }
 
-        return new string(chars,0,length);
+        return new string(chars, 0, length);
     }
 }

@@ -8,9 +8,9 @@ public class LeetCode28
 
     public LeetCode28()
     {
-        Console.WriteLine(StrStr("hello","ll"));
+        Console.WriteLine(StrStr("hello", "ll"));
     }
-    
+
     public void GetNextArray(int[] next, string needle)
     {
         int j = -1;
@@ -22,7 +22,7 @@ public class LeetCode28
                 j = next[j];
             }
 
-            if (needle[i] == needle[j+1])
+            if (needle[i] == needle[j + 1])
             {
                 j++;
             }
@@ -30,11 +30,11 @@ public class LeetCode28
             next[i] = j;
         }
     }
-    
+
     public int StrStr(string haystack, string needle)
     {
         var next = new int[needle.Length];
-        GetNextArray(next,needle);
+        GetNextArray(next, needle);
         int j = -1;
         for (int i = 0; i < haystack.Length; i++)
         {
@@ -42,7 +42,7 @@ public class LeetCode28
             {
                 j = next[j];
             }
-            if (haystack[i] == needle[j+1])
+            if (haystack[i] == needle[j + 1])
             {
                 j++;
             }

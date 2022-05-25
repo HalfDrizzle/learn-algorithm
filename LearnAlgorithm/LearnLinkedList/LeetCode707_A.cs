@@ -10,14 +10,14 @@ namespace LearnAlgorithm.LearnLinkedList
 
             obj.AddAtHead(1);
             obj.AddAtTail(3);
-            obj.AddAtIndex(1,2);
+            obj.AddAtIndex(1, 2);
             int param_1 = obj.Get(1);
             Console.WriteLine(param_1);
             obj.DeleteAtIndex(1);
             param_1 = obj.Get(1);
             Console.WriteLine(param_1);
         }
-        
+
         public class NodeList
         {
             public NodeList next;

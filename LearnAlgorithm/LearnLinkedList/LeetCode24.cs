@@ -7,7 +7,7 @@ public class LeetCode24
     public LeetCode24()
     {
         var listNode = AddListNode();
-        
+
         Print(SwapPairs(listNode));
     }
 
@@ -27,12 +27,12 @@ public class LeetCode24
     public void Print(ListNode listNode)
     {
         var cur = listNode;
-        while ( cur.next == null)
+        while (cur.next == null)
         {
-            Console.Write(cur.val+",");
+            Console.Write(cur.val + ",");
         }
     }
-    
+
     public class ListNode
     {
         public int val;
@@ -68,7 +68,7 @@ public class LeetCode24
             {
                 break;
             }
-            
+
             pre = cur;
             cur = tmp;
             end = tmp.next;

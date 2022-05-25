@@ -14,39 +14,45 @@ public class LeetCode239_B
             Console.Write(result + " ");
         }
     }
-    
+
     private class Myqueue
     {
         LinkedList<int> queue = new LinkedList<int>();
-        public void Pop(int value) {
+        public void Pop(int value)
+        {
             if (queue.First != null && value == queue.First.Value)
             {
                 queue.RemoveFirst();
             }
         }
-        public void Push(int value) {
-            while (queue.Last!=null && value > queue.Last.Value)
+        public void Push(int value)
+        {
+            while (queue.Last != null && value > queue.Last.Value)
             {
                 queue.RemoveLast();
             }
 
             queue.AddLast(value);
         }
-        
-        public int Front() {
+
+        public int Front()
+        {
             return queue.First.Value;
         }
     }
-    
-    public int[] MaxSlidingWindow(int[] nums, int k) {
-        if(nums == null || nums.Length < 2) return nums;
+
+    public int[] MaxSlidingWindow(int[] nums, int k)
+    {
+        if (nums == null || nums.Length < 2) return nums;
         Myqueue queue = new Myqueue();
         int[] result = new int[nums.Length - k + 1];
-        for(int i = 0; i < k; i++){
+        for (int i = 0; i < k; i++)
+        {
             queue.Push(nums[i]);
         }
         result[0] = queue.Front();
-        for(int i = k; i < nums.Length; i++){
+        for (int i = k; i < nums.Length; i++)
+        {
             queue.Pop(nums[i - k]);
             queue.Push(nums[i]);
             result[i - k + 1] = queue.Front();
