@@ -1,4 +1,6 @@
-﻿using LearnAlgorithm.LearnStack;
+﻿using LearnAlgorithm.LearnSort;
+using LearnAlgorithm.LearnStack;
+using LearnAlgorithm.LearnTree;
 
 namespace LearnAlgorithm
 {
@@ -32,7 +34,13 @@ namespace LearnAlgorithm
             // var example = new LeetCode20();
             // var example = new LeetCode1047();
             // var example = new LeetCode239();
-            var example = new LeetCode239_B();
+            //var example = new LeetCode239_B();
+            //var example = new LeetCode106();
+            //var example = new LeetCode105();
+            //var example = new LeetCode501();
+            //var example = new LeetCode108();
+            var example = new LeetCode704();
+
         }
     }
 }
